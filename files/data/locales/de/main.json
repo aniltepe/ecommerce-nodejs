@@ -1,0 +1,11 @@
+{
+  "name": "Deutsch",
+  "order": 3,
+  "home": "Startseite",
+  "signin": "Einloggen",
+  "signup": "Registrieren",
+  "welcomeback": "Willkommen zurück",
+  "createaccount": "Konto erstellenn",
+  "donthaveaccount": "Sie haben kein konto? <0>Registrieren</0>",
+  "alreadyhaveaccount": "Sie haben bereits ein konto? <0>Einloggen</0>"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "日本語",
+  "order": 6,
+  "home": "ホームページ",
+  "signin": "ログインする",
+  "signup": "サインアップ",
+  "welcomeback": "お帰りなさい",
+  "createaccount": "アカウントを作成する",
+  "donthaveaccount": "アカウントを持っていませんか？ <0>サインアップ</0>",
+  "alreadyhaveaccount": "すでにアカウントをお持ちですか？ <0>ログインする</0>"
+}

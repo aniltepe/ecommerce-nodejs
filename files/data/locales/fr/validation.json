@@ -1,0 +1,9 @@
+{
+  "fieldinuse": "<0></0> est déjà utilisé.",
+  "fieldminlength": "<0></0> doit comporter au moins <1></1> caractères.",
+  "fieldmaxlength": "<0></0> doit comporter au maximum <1></1> caractères.",
+  "fieldrequired": "<0></0> est requis.",
+  "fieldinvalid": "<0></0> est invalide.",
+  "passwordincludes": "Le mot de passe doit comprendre au moins une lettre minuscule, une lettre majuscule et un chiffre.",
+  "passwordsnomatch": "Les mots de passe ne correspondent pas."
+}

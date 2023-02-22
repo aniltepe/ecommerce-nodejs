@@ -32,8 +32,4 @@
 //     })
 
 
-// }) 
-
-// app.listen(6969,()=>{
-//     console.log("started")
 // })

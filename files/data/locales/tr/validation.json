@@ -1,0 +1,9 @@
+{
+  "fieldinuse": "<0></0> kullanılıyor.",
+  "fieldminlength": "<0></0> en az <1></1> karakterden oluşmalıdır.",
+  "fieldmaxlength": "<0></0> en fazla <1></1> karakterden oluşmalıdır.",
+  "fieldrequired": "<0></0> zorunludur.",
+  "fieldinvalid": "<0></0> geçersiz.",
+  "passwordincludes": "Parola en az bir büyük harf, bir küçük harf ve bir rakam içermelidir.",
+  "passwordsnomatch": "Parolalar uyuşmuyor."
+}

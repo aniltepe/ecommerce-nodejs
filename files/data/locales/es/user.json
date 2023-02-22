@@ -1,0 +1,12 @@
+{
+  "username": "Nombre de usuario",
+  "password": "Contraseña",
+  "confirmpassword": "Confirmar contraseña",
+  "email": "Dirección de correo electrónico",
+  "confirmemail": "Confirmar el correo",
+  "usernamephoneoremail": "Nombre de usuario, número de teléfono o correo electrónico",
+  "fullname": "Nombre completo",
+  "phonenumber": "Número de teléfono",
+  "forgotpass": "Olvidé la contraseña",
+  "rememberme": "Acuérdate de mí"
+}

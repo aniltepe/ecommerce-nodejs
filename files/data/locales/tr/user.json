@@ -1,0 +1,12 @@
+{
+  "username": "Kullanıcı adı",
+  "password": "Parola",
+  "confirmpassword": "Parola doğrulama",
+  "email": "E-posta adresi",
+  "confirmemail": "E-posta adresi doğrula",
+  "usernamephoneoremail": "Kullanıcı adı, telefon numarası veya e-posta",
+  "fullname": "Ad Soyad",
+  "phonenumber": "Telefon numarası",
+  "forgotpass": "Parolamı unuttum",
+  "rememberme": "Beni hatırla"
+}

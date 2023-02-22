@@ -1,0 +1,12 @@
+{
+  "username": "ユーザー名",
+  "password": "パスワード",
+  "confirmpassword": "パスワードを認証する",
+  "email": "電子メールアドレス",
+  "confirmemail": "メールアドレスを確認",
+  "usernamephoneoremail": "ユーザー名、電話番号または電子メール",
+  "fullname": "フルネーム",
+  "phonenumber": "電話番号",
+  "forgotpass": "パスワードをお忘れですか",
+  "rememberme": "私を覚えてますか"
+}
