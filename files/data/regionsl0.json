@@ -1,0 +1,7 @@
+[
+    { "_id": "R01", "name": "Africa, Middle East, and India" },
+    { "_id": "R02", "name": "Asia Pacific" },
+    { "_id": "R03", "name": "Europe" },
+    { "_id": "R04", "name": "Latin America and the Caribbean" },
+    { "_id": "R05", "name": "The United States, Canada, and Puerto Rico" }
+]

@@ -1,11 +1,13 @@
 {
   "name": "Türkçe",
-  "order": 1,
   "home": "Ana Sayfa",
-  "signin": "Giriş yap",
+  "login": "Giriş yap",
   "signup": "Kayıt ol",
   "welcomeback": "Yeniden hoşgeldiniz",
+  "signinaccount": "Hesabınıza giriş yapın",
   "createaccount": "Hesap oluşturun",
   "donthaveaccount": "Hesabın yok mu? <0>Kayıt ol</0>",
-  "alreadyhaveaccount": "Hesabın var mı? <0>Giriş yap</0>"
+  "alreadyhaveaccount": "Hesabın var mı? <0>Giriş yap</0>",
+  "termsandconditions": "Kullanım Sözleşmesi",
+  "shop": "Mağaza"
 }

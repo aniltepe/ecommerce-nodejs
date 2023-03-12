@@ -1,11 +1,13 @@
 {
   "name": "Français",
-  "order": 5,
   "home": "Page d'accueil",
-  "signin": "S'identifier",
+  "login": "S'identifier",
   "signup": "S'inscrire",
   "welcomeback": "Content de te revoir",
+  "signinaccount": "Connectez-vous à votre compte",
   "createaccount": "Créer un compte",
   "donthaveaccount": "Vous n'avez pas de compte? <0>S'inscrire</0>",
-  "alreadyhaveaccount": "Vous avez déjà un compte? <0>S'identifier</0>"
+  "alreadyhaveaccount": "Vous avez déjà un compte? <0>S'identifier</0>",
+  "termsandconditions": "Termes et Conditions",
+  "shop": "Boutique"
 }

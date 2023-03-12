@@ -5,5 +5,6 @@
   "fieldrequired": "<0></0> zorunludur.",
   "fieldinvalid": "<0></0> geçersiz.",
   "passwordincludes": "Parola en az bir büyük harf, bir küçük harf ve bir rakam içermelidir.",
-  "passwordsnomatch": "Parolalar uyuşmuyor."
+  "passwordsnomatch": "Parolalar uyuşmuyor.",
+  "termsnoagree": "Kullanım Sözleşmesi şartları okunmalı ve kabul edilmelidir."
 }

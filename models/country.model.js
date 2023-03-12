@@ -5,9 +5,9 @@ const Country = mongoose.model(
   new mongoose.Schema({
     _id: { type: String },
     name: { type: String },
-    preferredLang: { type: String, ref: "Locale" },
+    preferredLangs: [ { type: String, ref: "Locale" } ],
+    level0: { type: String, ref: "RegionL0"},
     dialCode: { type: String },
-    displayOrder: { type: Number },
     icon: { type: Buffer }
   })
 );

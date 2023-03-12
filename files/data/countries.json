@@ -1,9 +1,12 @@
 [
-    { "_id": "TR", "name": "Türkiye", "preferredLang": "tr", "dialCode": "+90", "displayOrder": 1 },
-    { "_id": "US", "name": "USA", "preferredLang": "en", "dialCode": "+1", "displayOrder": 2 },
-    { "_id": "GB", "name": "United Kingdom", "preferredLang": "en", "dialCode": "+44", "displayOrder": 3 },
-    { "_id": "ES", "name": "España", "preferredLang": "es", "dialCode": "+34", "displayOrder": 5 },
-    { "_id": "FR", "name": "France", "preferredLang": "fr", "dialCode": "+33", "displayOrder": 6 },
-    { "_id": "DE", "name": "Deutschland", "preferredLang": "de", "dialCode": "+49", "displayOrder": 4 },
-    { "_id": "JP", "name": "日本国", "preferredLang": "ja", "dialCode": "+81", "displayOrder": 7 }
+    { "_id": "TR", "name": "Türkiye", "preferredLangs": ["tr"], "level0": "R03", "dialCode": "+90" },
+    { "_id": "US", "name": "USA", "preferredLangs": ["en"], "level0": "R05", "dialCode": "+1" },
+    { "_id": "GB", "name": "United Kingdom", "preferredLangs": ["en"], "level0": "R03", "dialCode": "+44" },
+    { "_id": "ES", "name": "España", "preferredLangs": ["es"], "level0": "R03", "dialCode": "+34" },
+    { "_id": "FR", "name": "France", "preferredLangs": ["fr"], "level0": "R03", "dialCode": "+33" },
+    { "_id": "DE", "name": "Deutschland", "preferredLangs": ["de"], "level0": "R03", "dialCode": "+49" },
+    { "_id": "JP", "name": "日本", "preferredLangs": ["ja"], "level0": "R02", "dialCode": "+81" },
+    { "_id": "IN", "name": "India", "preferredLangs": ["en"], "level0": "R01", "dialCode": "+91" },
+    { "_id": "MX", "name": "México", "preferredLangs": ["es"], "level0": "R04", "dialCode": "+52" },
+    { "_id": "CA", "name": "Canada", "preferredLangs": ["en", "fr"], "level0": "R05", "dialCode": "+1" }
 ]

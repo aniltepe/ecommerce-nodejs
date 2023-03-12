@@ -1,0 +1,13 @@
+{
+  "name": "English",
+  "home": "Home",
+  "login": "Log in",
+  "signup": "Sign up",
+  "welcomeback": "Welcome back",
+  "signinaccount": "Sign in to your account",
+  "createaccount": "Create an account",
+  "donthaveaccount": "Don't have an account? <0>Sign up</0>",
+  "alreadyhaveaccount": "Already have an account? <0>Log in</0>",
+  "termsandconditions": "Terms and Conditions",
+  "shop": "Mağaza"
+}

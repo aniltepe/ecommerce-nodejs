@@ -1,11 +1,13 @@
 {
   "name": "Español",
-  "order": 4,
   "home": "Página principal",
-  "signin": "Iniciar sesión",
+  "login": "Iniciar sesión",
   "signup": "Regístrate",
   "welcomeback": "Bienvenido de nuevo",
+  "signinaccount": "Ingrese a su cuenta",
   "createaccount": "Crea una cuenta",
   "donthaveaccount": "¿No tienes una cuenta? <0>Regístrate</0>",
-  "alreadyhaveaccount": "¿Ya tienes una cuenta? <0>Iniciar sesión</0>"
+  "alreadyhaveaccount": "¿Ya tienes una cuenta? <0>Iniciar sesión</0>",
+  "termsandconditions": "Términos y Condiciones",
+  "shop": "Tienda"
 }

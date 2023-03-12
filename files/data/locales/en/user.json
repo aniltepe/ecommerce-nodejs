@@ -8,5 +8,6 @@
   "fullname": "Full name",
   "phonenumber": "Phone number",
   "forgotpass": "Forgot password",
-  "rememberme": "Remember me"
+  "rememberme": "Remember me",
+  "acceptterms": "I have read and agree with the <0>Terms and Conditions</0>."
 }

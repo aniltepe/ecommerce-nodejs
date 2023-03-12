@@ -2,15 +2,38 @@ const fs = require('fs');
 const path = require('path');
 const Country = require("../models/country.model");
 const Locale = require('../models/locale.model');
+const RegionL0 = require("../models/regionl0.model");
 const RegionL1 = require("../models/regionl1.model");
 const RegionL2 = require("../models/regionl2.model");
 
 const FILE_DATA_PATH = "../files/data/";
 const FILE_COUNTRIES_NAME = "countries.json";
+const FILE_REGIONSL0_NAME = "regionsl0.json";
 const FILE_ICONS_PATH = "../files/icons/";
 const FILE_REGIONSL1_PATH = "../files/data/regionsl1/";
 const FILE_REGIONSL2_PATH = "../files/data/regionsl2/";
 const FILE_LOCALES_PATH = "../files/data/locales/";
+
+exports.createOrUpdateRegionsL0 = () => {
+    let totalModified = 0;
+    let totalInserted = 0;
+    let totalMatch = 0;
+    const regionList = require(FILE_DATA_PATH + FILE_REGIONSL0_NAME);
+    regionList.forEach(r => {
+        RegionL0.updateOne({_id: r._id}, r, {upsert: true}, (err, doc) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            totalModified += doc.modifiedCount;
+            totalInserted += doc.upsertedCount;
+            totalMatch += doc.matchedCount;
+            if (totalMatch + totalInserted === regionList.length)
+                console.log("level 0 regions are being created or updated from file", FILE_REGIONSL0_NAME, "count:", regionList.length, 
+                "match:", totalMatch, "inserted:", totalInserted, "modified", totalModified);
+        });
+    });
+}
 
 exports.createOrUpdateCountries = () => {
     let totalModified = 0;
@@ -124,21 +147,9 @@ exports.createOrUpdateLocales = () => {
     });
 }
 
-exports.getLocales = async (req, res) => {
-    console.log("returning locales list");
-    const sampleDoc = await Locale.findOne({}, {_id: 0, __v: 0}).then(res => {return res}).catch(err => console.log(err));
-    Locale.aggregate([{$sort: {"main.order": 1}}, {$project: {_id: 0, id:"$_id", name: "$main.name", namespaces: Object.keys(sampleDoc._doc)}}], null, (err, docs) => {
-        if (err) {
-            console.log(err);
-            return res.status(500).send({msg:err});
-        }
-        return res.status(200).json(docs);
-    });
-}
-
-exports.getCountries = (req, res) => {
-    console.log("returning countries list");
-    Country.aggregate([{$sort: {displayOrder:1}}, {$project: {_id: 0, id:"$_id", name: 1, preferredLang: 1, dialCode: 1}}], null,
+exports.getRegionsL0 = (req, res) => {
+    console.log("returning regions list");
+    RegionL0.aggregate([{$sort: {name: 1}}, {$project: {_id: 0, id:"$_id", name: 1}}], null,
         (err, docs) => {
         if (err) {
             console.log(err);
@@ -147,4 +158,56 @@ exports.getCountries = (req, res) => {
         return res.status(200).json(docs);
     });
 }
+
+exports.getLocales = (req, res) => {
+    console.log("returning locales list");
+    Locale.aggregate([{$project: {_id: 0, id:"$_id", name: "$default.name"}}], null, (err, docs) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send({msg:err});
+        }
+        return res.status(200).json(docs);
+    });
+}
+
+exports.getLocale = (req, res) => {
+    console.log("returning locale by id", req.params.id);
+    Locale.findById(req.params.id, {__v: 0}, null, (err, doc) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send({msg:err});
+        }
+        if (doc) {
+            return res.status(200).json(doc);
+        }
+        console.log("locale not found, returning default");
+        return this.getLocale({...req, params: {...req.params, id: 'en'} }, res)
+    });
+}
+
+exports.getCountries = (req, res) => {
+    console.log("returning countries list");
+    Country.aggregate([{$project: {_id: 0, id:"$_id", name: 1, preferredLangs: 1, dialCode: 1, icon: 1}}], null, (err, docs) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send({msg:err});
+        }
+        return res.status(200).json(docs);
+    });
+}
+
+exports.getCountry = (req, res) => {
+    console.log("returning country by id", req.params.id);
+    Country.findById(req.params.id, {_id: 0, id:"$_id", name: 1, preferredLangs: 1, dialCode: 1, icon: 1}, null, (err, doc) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send({msg:err});
+        }
+        if (doc)
+            return res.status(200).json(doc);
+        console.log("country not found, returning default");
+        return this.getCountry({...req, params: {...req.params, id: 'US'} }, res);
+    });
+}
+
 

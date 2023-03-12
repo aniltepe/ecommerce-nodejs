@@ -5,5 +5,6 @@
   "fieldrequired": "<0></0> is required.",
   "fieldinvalid": "<0></0> is invalid.",
   "passwordincludes": "Password must include at least one lowercase letter, one uppercase letter and a number.",
-  "passwordsnomatch": "Passwords do not match."
+  "passwordsnomatch": "Passwords do not match.",
+  "termsnoagree": "Terms and Conditions must be read and accepted."
 }

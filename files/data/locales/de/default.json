@@ -1,0 +1,13 @@
+{
+  "name": "Deutsch",
+  "home": "Startseite",
+  "login": "Einloggen",
+  "signup": "Registrieren",
+  "welcomeback": "Willkommen zurück",
+  "signinaccount": "Melden Sie sich bei Ihrem Konto an",
+  "createaccount": "Konto erstellenn",
+  "donthaveaccount": "Sie haben kein konto? <0>Registrieren</0>",
+  "alreadyhaveaccount": "Sie haben bereits ein konto? <0>Einloggen</0>",
+  "termsandconditions": "Geschäftsbedingungen",
+  "shop": "Geschäft"
+}
