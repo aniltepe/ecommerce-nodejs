@@ -28,7 +28,7 @@ app.listen(port, () => {
 
 function initialize() {
   console.log('MongoDB connected, initializing essential collections');
-  appCon.createOrUpdateLocales();
+  appCon.createOrUpdateLangs();
   appCon.createOrUpdateRegionsL0();
   appCon.createOrUpdateCountries();
   appCon.createOrUpdateRegionsL1();

@@ -5,8 +5,8 @@ module.exports = router;
 
 const controller = require("../controllers/app.controller");
 
-router.get("/locales", controller.getLocales);
+router.get("/langs", controller.getLangs);
 router.get("/countries", controller.getCountries);
 router.get("/regions", controller.getRegionsL0);
-router.get("/locale/:id", controller.getLocale);
+router.get("/lang/:id", controller.getLang);
 router.get("/country/:id", controller.getCountry);

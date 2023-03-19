@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     image: { type: Buffer },
     gender: { type: String },
     bio: { type: String, trim: true },
-    locale: { type: String, ref: "Locale" },
+    lang: { type: String, ref: "Lang" },
     country: { type: String, ref: "Country" },
     addresses: [ {type: mongoose.Schema.Types.ObjectId, ref: "Address" } ]
 }, {timestamps: true});

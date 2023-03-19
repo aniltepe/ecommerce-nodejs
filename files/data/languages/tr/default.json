@@ -9,5 +9,7 @@
   "donthaveaccount": "Hesabın yok mu? <0>Kayıt ol</0>",
   "alreadyhaveaccount": "Hesabın var mı? <0>Giriş yap</0>",
   "termsandconditions": "Kullanım Sözleşmesi",
-  "shop": "Mağaza"
+  "shop": "Mağaza",
+  "darkmode": "Gece modu",
+  "lightmode": "Gündüz modu"
 }

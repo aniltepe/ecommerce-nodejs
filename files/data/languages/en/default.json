@@ -9,5 +9,7 @@
   "donthaveaccount": "Don't have an account? <0>Sign up</0>",
   "alreadyhaveaccount": "Already have an account? <0>Log in</0>",
   "termsandconditions": "Terms and Conditions",
-  "shop": "Mağaza"
+  "shop": "Shop",
+  "darkmode": "Dark mode",
+  "lightmode": "Light mode"
 }

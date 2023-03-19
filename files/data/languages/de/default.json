@@ -9,5 +9,7 @@
   "donthaveaccount": "Sie haben kein konto? <0>Registrieren</0>",
   "alreadyhaveaccount": "Sie haben bereits ein konto? <0>Einloggen</0>",
   "termsandconditions": "Geschäftsbedingungen",
-  "shop": "Geschäft"
+  "shop": "Geschäft",
+  "darkmode": "Dunkler modus",
+  "lightmode": "Heller modus"
 }

@@ -9,5 +9,7 @@
   "donthaveaccount": "Vous n'avez pas de compte? <0>S'inscrire</0>",
   "alreadyhaveaccount": "Vous avez déjà un compte? <0>S'identifier</0>",
   "termsandconditions": "Termes et Conditions",
-  "shop": "Boutique"
+  "shop": "Boutique",
+  "darkmode": "Mode sombre",
+  "lightmode": "Mode clair"
 }

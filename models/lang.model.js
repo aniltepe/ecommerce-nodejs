@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const Locale = mongoose.model(
-  "Locale",
+const Lang = mongoose.model(
+  "Lang",
   new mongoose.Schema({ _id: String }, { strict: false })
 );
 
-module.exports = Locale;
+module.exports = Lang;
