@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Country = require("../models/country.model");
-const Lang = require('../models/lang.model');
+const Language = require('../models/language.model');
 const RegionL0 = require("../models/regionl0.model");
 const RegionL1 = require("../models/regionl1.model");
 const RegionL2 = require("../models/regionl2.model");
@@ -114,7 +114,7 @@ exports.createOrUpdateRegionsL2 = () => {
     });
 }
 
-exports.createOrUpdateLangs = () => { 
+exports.createOrUpdateLanguages = () => { 
     let totalModified = 0;
     let totalInserted = 0;
     let totalMatch = 0;
@@ -132,7 +132,7 @@ exports.createOrUpdateLangs = () => {
         ns.forEach(n => {
             l[n.split(".")[0]] = require(FILE_LANGS_PATH + code + "/" + n);
         });
-        Lang.updateOne({_id: code}, l, {upsert: true}, (err, doc) => {
+        Language.updateOne({_id: code}, l, {upsert: true}, (err, doc) => {
             if (err) {
                 console.log(err);
                 return;
@@ -141,71 +141,71 @@ exports.createOrUpdateLangs = () => {
             totalInserted += doc.upsertedCount;
             totalMatch += doc.matchedCount;
             if (totalMatch + totalInserted === codes.length)
-                console.log("langs are being created or updated from files", "count:", codes.length, 
+                console.log("languages are being created or updated from files", "count:", codes.length, 
                 "match:", totalMatch, "inserted:", totalInserted, "modified", totalModified);
         });
     });
 }
 
 exports.getRegionsL0 = (req, res) => {
-    console.log("returning regions list");
+    // console.log("returning regions list");
     RegionL0.aggregate([{$sort: {name: 1}}, {$project: {_id: 0, id:"$_id", name: 1}}], null,
         (err, docs) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({msg:err});
+            return res.status(500).send({ message:err});
         }
         return res.status(200).json(docs);
     });
 }
 
-exports.getLangs = (req, res) => {
-    console.log("returning langs list");
-    Lang.aggregate([{$project: {_id: 0, id:"$_id", name: "$default.name"}}], null, (err, docs) => {
+exports.getLanguages = (req, res) => {
+    // console.log("returning languages list");
+    Language.aggregate([{$project: {_id: 0, id:"$_id", name: "$default.name"}}], null, (err, docs) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({msg:err});
+            return res.status(500).send({ message:err});
         }
         return res.status(200).json(docs);
     });
 }
 
-exports.getLang = (req, res) => {
-    console.log("returning lang by id", req.params.id);
-    Lang.findById(req.params.id, {__v: 0}, null, (err, doc) => {
+exports.getLanguage = (req, res) => {
+    // console.log("returning language by id", req.params.id);
+    Language.findById(req.params.id, {__v: 0}, null, (err, doc) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({msg:err});
+            return res.status(500).send({ message:err});
         }
         if (doc) {
             return res.status(200).json(doc);
         }
-        console.log("lang not found, returning default");
-        return this.getLang({...req, params: {...req.params, id: 'en'} }, res)
+        // console.log("language not found, returning default");
+        return this.getLanguage({...req, params: {...req.params, id: 'en'} }, res)
     });
 }
 
 exports.getCountries = (req, res) => {
-    console.log("returning countries list");
+    // console.log("returning countries list");
     Country.aggregate([{$project: {_id: 0, id:"$_id", name: 1, preferredLangs: 1, dialCode: 1, icon: 1, level0: 1}}], null, (err, docs) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({msg:err});
+            return res.status(500).send({ message:err});
         }
         return res.status(200).json(docs);
     });
 }
 
 exports.getCountry = (req, res) => {
-    console.log("returning country by id", req.params.id);
+    // console.log("returning country by id", req.params.id);
     Country.findById(req.params.id, {_id: 0, id:"$_id", name: 1, preferredLangs: 1, dialCode: 1, icon: 1, level0: 1}, null, (err, doc) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({msg:err});
+            return res.status(500).send({ message:err});
         }
         if (doc)
             return res.status(200).json(doc);
-        console.log("country not found, returning default");
+        // console.log("country not found, returning default");
         return this.getCountry({...req, params: {...req.params, id: 'US'} }, res);
     });
 }

@@ -6,6 +6,8 @@
   "welcomeback": "Bienvenido de nuevo",
   "signinaccount": "Ingrese a su cuenta",
   "createaccount": "Crea una cuenta",
+  "accountcreated": "¡Tu cuenta ha sido creada!",
+  "erroroccured": "¡Algo salió mal!",
   "donthaveaccount": "¿No tienes una cuenta? <0>Regístrate</0>",
   "alreadyhaveaccount": "¿Ya tienes una cuenta? <0>Iniciar sesión</0>",
   "termsandconditions": "Términos y Condiciones",

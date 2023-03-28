@@ -6,6 +6,8 @@
   "welcomeback": "Welcome back",
   "signinaccount": "Sign in to your account",
   "createaccount": "Create an account",
+  "accountcreated": "Your account has been created!",
+  "erroroccured": "Something went wrong!",
   "donthaveaccount": "Don't have an account? <0>Sign up</0>",
   "alreadyhaveaccount": "Already have an account? <0>Log in</0>",
   "termsandconditions": "Terms and Conditions",

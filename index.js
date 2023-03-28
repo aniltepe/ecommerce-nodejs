@@ -1,8 +1,12 @@
 const express = require('express');
 const cors = require("cors");
-const mongoose = require("mongoose");
-
-const appCon = require("./controllers/app.controller");
+const mongoose = require("mongoose"); 
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+const appController = require("./controllers/app.controller");
+const userController = require("./controllers/user.controller");
+const routes = require('./routes/index');
 
 mongoose.set('strictQuery', false);
 const connect = mongoose.connect("mongodb://localhost:27017/garmnt",
@@ -18,19 +22,27 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const routes = require('./routes/index');
 app.use('/', routes);
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log(`Server Listening on ${port}`)
-});
+// app.use(express.static(path.join(__dirname, 'build')));
+// app.get('/*', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
+
+const options = {
+  key: fs.readFileSync('files/certs/key.pem'),
+  cert: fs.readFileSync('files/certs/certificate.pem')
+};
+https.createServer(options, app).listen(443, () => {
+  console.log(`https server listening on 443`)
+})
 
 function initialize() {
   console.log('MongoDB connected, initializing essential collections');
-  appCon.createOrUpdateLangs();
-  appCon.createOrUpdateRegionsL0();
-  appCon.createOrUpdateCountries();
-  appCon.createOrUpdateRegionsL1();
-  appCon.createOrUpdateRegionsL2();
+  appController.createOrUpdateLanguages();
+  appController.createOrUpdateRegionsL0();
+  appController.createOrUpdateCountries();
+  appController.createOrUpdateRegionsL1();
+  appController.createOrUpdateRegionsL2();
+  userController.createOrUpdateRoles();
 }

@@ -1,35 +1,12 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+module.exports = router;
 
-// router.post("/api/user/login", (req, res) => {
-//     if (req.body )
-//     // const user = new User(req.body);
+const controller = require("../controllers/user.controller");
 
-//     user.save((err, doc) => {
-//         if (err) return res.json({ success: false, err });
-//         return res.status(200).json({
-//             success: true
-//         });
-//     });
-// });
-// router.post("/api/user/signup", (req, res) => {
-//     console.log(req.body) 
-//     const {name,email,password} = req.body;
-//     User.findOne({email:email}, (err,user)=>{
-//         if(user){
-//             res.send({message:"user already exist"})
-//         }else {
-//             const user = new User({name,email,password})
-//             user.save(err=>{
-//                 if(err){
-//                     res.send(err)
-//                 }else{
-//                     res.send({message:"sucessfull"})
-//                 }
-//             })
-//         }
-//     })
-
-
-// })
+router.post("/login", controller.login);
+router.post("/signup", controller.signup);
+router.get("/checkusername/:username", controller.checkUsernameExists);
+router.get("/checkemail/:email", controller.checkEmailExists);
+router.get("/checkphone/:phone", controller.checkPhoneExists);

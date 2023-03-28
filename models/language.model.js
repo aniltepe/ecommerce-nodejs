@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const Lang = mongoose.model(
-  "Lang",
+const Language = mongoose.model(
+  "Language",
   new mongoose.Schema({ _id: String }, { strict: false })
 );
 
-module.exports = Lang;
+module.exports = Language;
