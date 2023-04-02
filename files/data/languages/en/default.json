@@ -7,6 +7,7 @@
   "signinaccount": "Sign in to your account",
   "createaccount": "Create an account",
   "accountcreated": "Your account has been created!",
+  "loginsuccessful": "Login successful!",
   "erroroccured": "Something went wrong!",
   "donthaveaccount": "Don't have an account? <0>Sign up</0>",
   "alreadyhaveaccount": "Already have an account? <0>Log in</0>",

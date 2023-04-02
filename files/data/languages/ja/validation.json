@@ -6,5 +6,7 @@
   "fieldinvalid": "<0></0>ドが無効です",
   "passwordincludes": "パスワードには、少なくとも 1 つの小文字、1 つの大文字、および数字を含める必要があります。",
   "passwordsnomatch": "パスワードが一致していません。",
+  "passwordnocorrect": "パスワードが正しくありません！",
+  "usernotfound": "ユーザーが見つかりません！",
   "termsnoagree": "利用規約を読んで同意する必要があります"
 }

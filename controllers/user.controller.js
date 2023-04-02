@@ -1,9 +1,14 @@
+const fs = require('fs');
+const path = require('path');
 const User = require("../models/user.model");
 const Role = require("../models/role.model");
-
 const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-const saltRounds = 10;
+const Session = require('../models/session.model');
+const { default: mongoose } = require('mongoose');
+
+const SALT_ROUNDS = 10;
+const USER_PLACEHOLDER_IMAGE_PATH = "../files/images/user.png";
 
 exports.createOrUpdateRoles = () => {
     let totalModified = 0;
@@ -27,24 +32,46 @@ exports.createOrUpdateRoles = () => {
 }
 
 exports.login = (req, res) => {
-    User.findOne({ $or: [ {username: req.body.any}, {email: req.body.any}, {phone: req.body.any}]}, null, null,
-    (err, user) => {
+    let criteria = undefined;
+    if (/^([\+])?([0-9]){10,13}$/.test(req.body.any))
+        criteria = {phone: req.body.any.startsWith("+") ? req.body.any : { $regex: '.*' + req.body.any + '.*'}};
+    else if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(req.body.any))
+        criteria = {email: req.body.any};
+    else if (/^([a-z0-9]+[\._]?)*$/.test(req.body.any))
+        criteria = {username: req.body.any};
+    else
+        return res.status(404).send({ message: "The information is neither username nor email nor phone"});
+
+    User.findOne(criteria,
+        {_id: 0, id:"$_id", fullname: 1, username: 1, email: 1, phone: 1, roles: 1, language: 1, country: 1, addresses: 1, createdAt: 1, password: 1, image: 1},
+        null, (err, user) => {
         if (err) {
             console.log(err);
-            return res.status(500).send({ message:err});
+            return res.status(500).send({ message: err });
         }
         if (user) {
-            bcryptjs.compare(req.body.password, doc.password, (er, result) => {
+            bcryptjs.compare(req.body.password, user.password, (er, result) => {
                 if (er) {
                     console.log(er);
-                    return res.status(500).send({ message: er});
+                    return res.status(500).send({ message: er });
                 }
-                if (!result) {
-                    return res.status(400).send({ message: "Password is invalid"});
+                if (result) {
+                    const token = jwt.sign({ id: user.id }, 'garmnt-secret-key', { expiresIn: req.body.remember ? "30d" : "15m" });
+                    Session.create({user: user._doc.id, clientUserAgent: req.headers['user-agent'], ip: req.ip}, (err_session, doc) => {
+                        if (err_session) {
+                            console.log(err_session);
+                            return res.status(500).send({ message: err_session });
+                        }
+                        res.status(200).send({...user._doc, password: undefined, token: token, session: doc._id});
+                    })
                 }
-                const token = jwt.sign({ id: user._id }, 'garmnt-secret-key', { expiresIn: 86400 });
-                res.status(200).send({...user, token: token})
+                else {
+                    return res.status(401).send({ message: "Password is invalid" });
+                }
             });
+        }
+        else {
+            return res.status(404).send({message: "User not found"});
         }
     });
 }
@@ -60,13 +87,15 @@ exports.signup = (req, res) => {
         if (user) {
             return res.status(400).send({ message: 'Username, email or phone already exists'});
         }
-        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(req.body.password))
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/.test(req.body.password))
             return res.status(400).send({ message: 'Password is weak'});
-        bcryptjs.hash(req.body.password, saltRounds, (err, hash) => {
+        bcryptjs.hash(req.body.password, SALT_ROUNDS, (err, hash) => {
             if (err) {
                 console.log(err);
                 return res.status(500).send({ message: err});
             }
+            const userimagepath = path.resolve(__dirname, USER_PLACEHOLDER_IMAGE_PATH);
+            const userimagebuffer = fs.readFileSync(userimagepath);
             const user = new User({
                 fullname: req.body.fullname,
                 username: req.body.username,
@@ -75,6 +104,7 @@ exports.signup = (req, res) => {
                 roles: ["user"],
                 language: req.body.language,
                 country: req.body.country,
+                image: userimagebuffer.toString("base64"),
                 password: hash
             });
             user.save((err) => {

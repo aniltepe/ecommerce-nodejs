@@ -6,5 +6,7 @@
   "fieldinvalid": "<0></0> est invalide.",
   "passwordincludes": "Le mot de passe doit comprendre au moins une lettre minuscule, une lettre majuscule et un chiffre.",
   "passwordsnomatch": "Les mots de passe ne correspondent pas.",
+  "passwordnocorrect": "Le mot de passe n'est pas correct!",
+  "usernotfound": "Utilisateur non trouvé !",
   "termsnoagree": "Les Termes et Conditions doivent être lus et acceptés"
 }

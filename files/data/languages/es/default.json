@@ -7,6 +7,7 @@
   "signinaccount": "Ingrese a su cuenta",
   "createaccount": "Crea una cuenta",
   "accountcreated": "¡Tu cuenta ha sido creada!",
+  "loginsuccessful": "¡Inicio de sesión exitoso!",
   "erroroccured": "¡Algo salió mal!",
   "donthaveaccount": "¿No tienes una cuenta? <0>Regístrate</0>",
   "alreadyhaveaccount": "¿Ya tienes una cuenta? <0>Iniciar sesión</0>",

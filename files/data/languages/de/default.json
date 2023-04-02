@@ -7,6 +7,7 @@
   "signinaccount": "Melden Sie sich bei Ihrem Konto an",
   "createaccount": "Konto erstellenn",
   "accountcreated": "Ihr Konto wurde erstellt!",
+  "loginsuccessful": "Anmeldung erfolgreich!",
   "erroroccured": "Etwas ist schief gelaufen!",
   "donthaveaccount": "Sie haben kein konto? <0>Registrieren</0>",
   "alreadyhaveaccount": "Sie haben bereits ein konto? <0>Einloggen</0>",

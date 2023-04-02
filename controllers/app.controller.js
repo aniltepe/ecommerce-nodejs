@@ -43,8 +43,8 @@ exports.createOrUpdateCountries = () => {
     countryList.forEach(c => {
         const path_svg = FILE_ICONS_PATH + c._id + ".svg";
         const file_path = path.resolve(__dirname, path_svg);
-        const b64_svg = fs.readFileSync(file_path);
-        c["icon"] = b64_svg.toString('base64');
+        const file_buffer = fs.readFileSync(file_path);
+        c["icon"] = file_buffer.toString('base64');
         Country.updateOne({_id: c._id}, c, {upsert: true}, (err, doc) => {
             if (err) {
                 console.log(err);

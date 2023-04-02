@@ -6,5 +6,7 @@
   "fieldinvalid": "<0></0> ist ungültig.",
   "passwordincludes": "Das Passwort muss mindestens einen Kleinbuchstaben, einen Großbuchstaben und eine Zahl enthalten.",
   "passwordsnomatch": "Passwörter stimmen nicht überein.",
+  "passwordnocorrect": "Passwort ist nicht korrekt!",
+  "usernotfound": "Benutzer nicht gefunden!",
   "termsnoagree": "Geschäftsbedingungen müssen gelesen und akzeptiert werden"
 }

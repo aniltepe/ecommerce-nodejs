@@ -4,7 +4,7 @@
   "description": "mern server test",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Nazim Anil Tepe",
   "license": "ISC",
@@ -15,5 +15,8 @@
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.4",
     "mongoose": "^6.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

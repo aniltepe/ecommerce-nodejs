@@ -6,5 +6,7 @@
   "fieldinvalid": "<0></0> geçersiz.",
   "passwordincludes": "Parola en az bir büyük harf, bir küçük harf ve bir rakam içermelidir.",
   "passwordsnomatch": "Parolalar uyuşmuyor.",
+  "passwordnocorrect": "Parola doğru değil!",
+  "usernotfound": "Kullanıcı bulunamadı!",
   "termsnoagree": "Kullanım Sözleşmesi şartları okunmalı ve kabul edilmelidir."
 }
