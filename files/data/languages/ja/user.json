@@ -9,5 +9,8 @@
   "phonenumber": "電話番号",
   "forgotpass": "パスワードをお忘れですか",
   "rememberme": "私を覚えてますか",
-  "acceptterms": "<0>規約と条件</0>を読み、同意します"
+  "acceptterms": "<0>規約と条件</0>を読み、同意します",
+  "profile": "プロフィール",
+  "settings": "設定",
+  "logout": "ログアウト"
 }

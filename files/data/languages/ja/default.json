@@ -9,6 +9,7 @@
   "accountcreated": "あなたのアカウントが作成されました！",
   "loginsuccessful": "ログイン成功！",
   "erroroccured": "エラーが発生しました！",
+  "loggedout": "ログアウトしました。",
   "donthaveaccount": "アカウントを持っていませんか？ <0>サインアップ</0>",
   "alreadyhaveaccount": "すでにアカウントをお持ちですか？ <0>ログインする</0>",
   "termsandconditions": "規約と条件",

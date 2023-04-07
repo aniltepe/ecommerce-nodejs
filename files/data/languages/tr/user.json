@@ -9,5 +9,8 @@
   "phonenumber": "Telefon numarası",
   "forgotpass": "Parolamı unuttum",
   "rememberme": "Beni hatırla",
-  "acceptterms": "<0>Kullanım Sözleşmesi</0> şartlarını okudum ve kabul ediyorum."
+  "acceptterms": "<0>Kullanım Sözleşmesi</0> şartlarını okudum ve kabul ediyorum.",
+  "profile": "Profil",
+  "settings": "Ayarlar",
+  "logout": "Çıkış yap"
 }

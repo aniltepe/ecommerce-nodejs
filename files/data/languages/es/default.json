@@ -9,6 +9,7 @@
   "accountcreated": "¡Tu cuenta ha sido creada!",
   "loginsuccessful": "¡Inicio de sesión exitoso!",
   "erroroccured": "¡Algo salió mal!",
+  "loggedout": "Desconectado.",
   "donthaveaccount": "¿No tienes una cuenta? <0>Regístrate</0>",
   "alreadyhaveaccount": "¿Ya tienes una cuenta? <0>Iniciar sesión</0>",
   "termsandconditions": "Términos y Condiciones",

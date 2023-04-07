@@ -9,5 +9,8 @@
   "phonenumber": "Phone number",
   "forgotpass": "Forgot password",
   "rememberme": "Remember me",
-  "acceptterms": "I have read and agree with the <0>Terms and Conditions</0>."
+  "acceptterms": "I have read and agree with the <0>Terms and Conditions</0>.",
+  "profile": "Profile",
+  "settings": "Settings",
+  "logout": "Logout"
 }

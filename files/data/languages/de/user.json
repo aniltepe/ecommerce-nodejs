@@ -9,5 +9,8 @@
   "phonenumber": "Telefonnummer",
   "forgotpass": "Passwort vergessen",
   "rememberme": "Erinnere dich an mich",
-  "acceptterms": "Ich habe die <0>Geschäftsbedingungen</0> gelesen und bin damit einverstanden."
+  "acceptterms": "Ich habe die <0>Geschäftsbedingungen</0> gelesen und bin damit einverstanden.",
+  "profile": "Profil",
+  "settings": "Einstellungen",
+  "logout": "Ausloggen"
 }

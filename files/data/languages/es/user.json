@@ -9,5 +9,8 @@
   "phonenumber": "Número de teléfono",
   "forgotpass": "Olvidé la contraseña",
   "rememberme": "Acuérdate de mí",
-  "acceptterms": "He leído y acepto los <0>Términos y Condiciones</0>."
+  "acceptterms": "He leído y acepto los <0>Términos y Condiciones</0>.",
+  "profile": "Perfil",
+  "settings": "Ajustes",
+  "logout": "Cerrar sesión"
 }

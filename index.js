@@ -1,5 +1,7 @@
 const express = require('express');
+const helmet = require("helmet");
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
 const mongoose = require("mongoose"); 
 const https = require('https');
 const fs = require('fs');
@@ -18,10 +20,11 @@ const connect = mongoose.connect("mongodb://localhost:27017/garmnt",
     .catch(err => console.log(err));
 
 const app = express();
-app.use(cors())
+app.use(cors({origin: true, credentials: true}))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(helmet())
+app.use(cookieParser());
 app.use('/', routes);
 
 // app.use(express.static(path.join(__dirname, 'build')));

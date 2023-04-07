@@ -9,6 +9,7 @@
   "accountcreated": "Ihr Konto wurde erstellt!",
   "loginsuccessful": "Anmeldung erfolgreich!",
   "erroroccured": "Etwas ist schief gelaufen!",
+  "loggedout": "Abgemeldet.",
   "donthaveaccount": "Sie haben kein konto? <0>Registrieren</0>",
   "alreadyhaveaccount": "Sie haben bereits ein konto? <0>Einloggen</0>",
   "termsandconditions": "Geschäftsbedingungen",
